@@ -1,41 +1,15 @@
 stages:
-  ingest_data:
+  run_pipeline:
     cmd: python main.py
     deps:
+      - main.py
       - src/data_ingestion.py
-      - data/raw/dataset.csv
-    outs:
-      - data/raw/dataset.csv
-
-  preprocess_data:
-    cmd: python main.py
-    deps:
       - src/data_preprocessing.py
+      - src/feature_engineering.py
+      - src/model_training.py
+      - src/model_evaluation.py
       - data/raw/dataset.csv
     outs:
-      - data/processed/preprocessed.csv  # Renamed output file
-
-  feature_engineering:
-    cmd: python main.py
-    deps:
-      - src/feature_engineering.py
-      - data/processed/preprocessed.csv  # Changed to the new output file
-    outs:
-      - data/processed/features.csv  # New output file for feature engineering
-
-  train_model:
-    cmd: python main.py
-    deps:
-      - src/model_training.py
-      - data/processed/features.csv  # Changed to new features file
-    outs:
+      - data/processed/processed.csv
       - models/model.pkl
-
-  evaluate_model:
-    cmd: python main.py
-    deps:
-      - src/model_evaluation.py
-      - models/model.pkl
-      - data/processed/features.csv  # Changed to new features file
-    outs:
       - evaluation_results.txt

@@ -1,1 +1,1 @@
-Model R^2 Score: 0.97
+Model R^2 Score: 0.98
