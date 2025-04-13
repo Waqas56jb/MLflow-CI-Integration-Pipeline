@@ -1,0 +1,4 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = C:\Users\FAST LAPTOP\OneDrive\Documents\projects\MLOps Playlist\Day7 MLFlow CI Continous Integration\MLflow-CI-Integration-Pipeline\S3
