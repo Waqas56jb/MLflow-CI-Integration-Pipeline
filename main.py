@@ -1,9 +1,9 @@
 # 🚀 main.py to run all steps
-from src.1_data_ingestion import load_data
-from src.2_data_preprocessing import preprocess
-from src.3_feature_engineering import prepare_features
-from src.4_model_training import train_model
-from src.5_model_evaluation import evaluate
+from src.data_ingestion import load_data
+from src.data_preprocessing import preprocess
+from src.feature_engineering import prepare_features
+from src.model_training import train_model
+from src.model_evaluation import evaluate
 
 def main():
     df = load_data()
