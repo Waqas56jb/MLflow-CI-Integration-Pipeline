@@ -9,6 +9,11 @@ def main():
     df = load_data()
     df = preprocess(df)
     X, y = prepare_features(df)
+    
+    # Processed data
+    df_processed = df[['Area', 'Bedrooms', 'Age', 'Price']]  # Prepare processed data
+    df_processed.to_csv('data/processed/processed.csv', index=False)  # Save processed data
+    
     model, X_test, y_test = train_model(X, y)
     evaluate(model, X_test, y_test)
 

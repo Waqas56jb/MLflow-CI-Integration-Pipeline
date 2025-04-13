@@ -1,4 +1,4 @@
-# 5️⃣ src/5_model_evaluation.py
+# src/5_model_evaluation.py
 from sklearn.metrics import r2_score
 
 def evaluate(model, X_test, y_test):
