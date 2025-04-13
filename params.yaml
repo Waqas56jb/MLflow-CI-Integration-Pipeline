@@ -1,0 +1,6 @@
+preprocessing:
+  dropna: true
+
+model:
+  test_size: 0.2
+  model_type: LinearRegression
